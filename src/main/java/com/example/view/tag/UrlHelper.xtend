@@ -6,7 +6,7 @@ import org.springframework.util.LinkedMultiValueMap
 import org.springframework.web.util.UriComponentsBuilder
 
 class UrlHelper {
-    
+
     def static toUrl(String path, List<String> params, Map<String, String> queryParams) {
         val multiValueMap = new LinkedMultiValueMap<String, String>()
         for (Map.Entry<String, String> queryParam : queryParams.entrySet()) {
@@ -14,5 +14,5 @@ class UrlHelper {
         }
         return UriComponentsBuilder.fromPath(path).queryParams(multiValueMap).buildAndExpand(params.toArray()).toString
     }
-    
+
 }

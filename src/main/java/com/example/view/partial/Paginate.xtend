@@ -7,19 +7,20 @@ import org.apache.commons.collections4.CollectionUtils
 import org.springframework.data.domain.Page
 
 class Paginate {
-    def static render(Page<?> list, String path, Map<String, String> queryParams, int inner, int outer, boolean showFirstLast) {
+    def static render(Page<?> list, String path, Map<String, String> queryParams, int inner, int outer,
+        boolean showFirstLast) {
         val pager = new Pager
         pager.setCurrentPage(list.number)
         pager.setPageCount(list.totalPages)
         pager.setInnerItemsCount(inner)
         pager.setOuterItemsCount(outer)
         val pagerItems = pager.items
-        
+
         '''
-          «IF !CollectionUtils.isEmpty(pagerItems)»
-            <div class="ui pagination menu">
-              «FOR pagerItem : pagerItems»
-                «Html::linkTag
+            «IF !CollectionUtils.isEmpty(pagerItems)»
+                <div class="ui pagination menu">
+                  «FOR pagerItem : pagerItems»
+                      «Html::linkTag
                       .content(pagerItem.label)
                       .path(path)
                       .queryParams(queryParams)
@@ -28,16 +29,16 @@ class Paginate {
                       .clazzIf("active", pagerItem.currentPage)
                       .renderIf(pagerItem.enabled)
                       .build»
-                «Html::tag
+                      «Html::tag
                       .tagName("div")
                       .content(pagerItem.label)
                       .clazz("disabled item")
                       .renderIf(!pagerItem.enabled)
                       .build»
-              «ENDFOR»
-            </div>
-            <div style="clear:both"></div>
-          «ENDIF»
-        '''        
+                  «ENDFOR»
+                </div>
+                <div style="clear:both"></div>
+            «ENDIF»
+        '''
     }
 }

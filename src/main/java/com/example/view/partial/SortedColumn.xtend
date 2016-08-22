@@ -4,17 +4,12 @@ import com.example.view.tag.Html
 import java.util.Map
 
 class SortedColumn {
-		
-	def static render(String label, 
-	                  String column, 
-	                  String sortDir, 
-	                  String sortColumn, 
-	                  String path,
-                      Map<String, String> queryParams, 
-                      String style) {
-		'''
-		
-		«Html::tag
+
+    def static render(String label, String column, String sortDir, String sortColumn, String path,
+        Map<String, String> queryParams, String style) {
+        '''
+            
+            «Html::tag
 		      .tagName("th")
 		      .attrIf("style", style, style != null)
 		      .clazzIf("sorted descending", sortColumn.equals(column) && "DESC".equals(sortDir))
@@ -41,7 +36,7 @@ class SortedColumn {
 		          '''
 		       ])
 		       .build»
-
-		'''
-	}
+            
+        '''
+    }
 }

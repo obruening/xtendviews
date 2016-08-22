@@ -5,33 +5,27 @@ import org.apache.commons.lang.builder.ToStringStyle;
 
 public class GlobalErrorDTO {
     private String message;
-	private String objectName;
+    private String objectName;
 
-    
-	public String getMessage() {
-		return message;
-	}
+    public String getMessage() {
+        return message;
+    }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public String getObjectName() {
+        return objectName;
+    }
 
-
-	public String getObjectName() {
-		return objectName;
-	}
-
-
-	public void setObjectName(String objectName) {
-		this.objectName = objectName;
-	}
-	
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
+    }
 
     @Override
     public String toString() {
-    	return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 
-	
 }

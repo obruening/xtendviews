@@ -10,13 +10,10 @@ import org.apache.commons.collections4.CollectionUtils
 import org.springframework.data.domain.Page
 
 class WordsIndex extends WordsView {
-	
-	def String render(Page<Word> wordsPage, 
-		              Map<String, String> queryParams, 
-		              String sortDir, 
-		              String sortColumn,
-		              WordSearchParams wordSearchParams) {
-		val view = '''
+
+    def String render(Page<Word> wordsPage, Map<String, String> queryParams, String sortDir, String sortColumn,
+        WordSearchParams wordSearchParams) {
+        val view = '''
             <h3 class="ui dividing header">Words</h3>
             
             «Html::formTag.clazz("ui form").action("/words").queryParams(queryParams).method("get")
@@ -69,5 +66,5 @@ class WordsIndex extends WordsView {
         '''
 
         renderLayout(view)
-	}
+    }
 }
