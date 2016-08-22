@@ -21,20 +21,20 @@ class Paginate {
                 <div class="ui pagination menu">
                   «FOR pagerItem : pagerItems»
                       «Html::linkTag
-                      .content(pagerItem.label)
-                      .path(path)
-                      .queryParams(queryParams)
-                      .queryParam("page", pagerItem.pageNumber)
-                      .clazz("item")
-                      .clazzIf("active", pagerItem.currentPage)
-                      .renderIf(pagerItem.enabled)
-                      .build»
+                            .content(pagerItem.label)
+                            .path(path)
+                            .queryParams(queryParams)
+                            .queryParam("page", pagerItem.pageNumber)
+                            .clazz("item")
+                            .clazzIf("active", pagerItem.currentPage)
+                            .renderIf(pagerItem.enabled)
+                            .build»
                       «Html::tag
-                      .tagName("div")
-                      .content(pagerItem.label)
-                      .clazz("disabled item")
-                      .renderIf(!pagerItem.enabled)
-                      .build»
+                            .tagName("div")
+                            .content(pagerItem.label)
+                            .clazz("disabled item")
+                            .renderIf(!pagerItem.enabled)
+                            .build»
                   «ENDFOR»
                 </div>
                 <div style="clear:both"></div>

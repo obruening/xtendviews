@@ -16,7 +16,7 @@ class WordsEdit extends WordsView {
             «Errors::render(fieldErrorDTOList)»
             
             «Html::formTag.clazz("ui form").action("/words/{id}").param(word.id).method("put").buildWithBlock([
-			   '''
+               '''
                  <table class="ui sortable celled table">
                    <thead>
                      <tr>
