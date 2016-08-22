@@ -6,10 +6,10 @@ class Flash {
     def static render(String flash) {
         '''
             «IF StringUtils.isNotBlank(flash)»
-              <div class="ui positive message">
-                <div class="header">Success!</div>
-                «flash»
-              </div>
+                <div class="ui positive message">
+                  <div class="header">Success!</div>
+                  «flash»
+                </div>
             «ENDIF»
         '''
     }

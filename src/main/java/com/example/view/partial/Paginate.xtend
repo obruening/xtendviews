@@ -11,8 +11,8 @@ class Paginate {
         val pager = new Pager
         pager.setCurrentPage(list.number)
         pager.setPageCount(list.totalPages)
-        pager.setInnerItemsCount(1)
-        pager.setOuterItemsCount(1)
+        pager.setInnerItemsCount(inner)
+        pager.setOuterItemsCount(outer)
         val pagerItems = pager.items
         
         '''

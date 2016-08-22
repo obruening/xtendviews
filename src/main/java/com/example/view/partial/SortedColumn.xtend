@@ -6,12 +6,12 @@ import java.util.Map
 class SortedColumn {
 		
 	def static render(String label, 
-		              String column, 
-		              String sortDir, 
-		              String sortColumn, 
-		              String path, 
-		              Map<String, String> queryParams,
-		              String style) {
+	                  String column, 
+	                  String sortDir, 
+	                  String sortColumn, 
+	                  String path,
+                      Map<String, String> queryParams, 
+                      String style) {
 		'''
 		
 		«Html::tag

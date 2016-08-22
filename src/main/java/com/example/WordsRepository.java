@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WordsRepository extends JpaRepository<Word, Long> {
-	Page<Word> findByWordContaining(String search, Pageable pageable);
+    Page<Word> findByWordContaining(String search, Pageable pageable);
 }

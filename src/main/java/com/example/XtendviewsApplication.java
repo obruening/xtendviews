@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class XtendviewsApplication {
-	
-	private static Logger logger = LoggerFactory.getLogger(XtendviewsApplication.class);
 
-	public static void main(String[] args) {
-		SpringApplication.run(XtendviewsApplication.class, args);
-	}
+    private static Logger logger = LoggerFactory.getLogger(XtendviewsApplication.class);
+
+    public static void main(String[] args) {
+        SpringApplication.run(XtendviewsApplication.class, args);
+    }
 }

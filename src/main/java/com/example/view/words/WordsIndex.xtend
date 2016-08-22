@@ -33,8 +33,8 @@ class WordsIndex extends WordsView {
                   </div>
                 '''
             ])»
-
-
+            
+            
             <table class="ui sortable celled compact table">
               <thead>
                 <tr>
@@ -45,29 +45,29 @@ class WordsIndex extends WordsView {
               </thead>
               <tbody>
                 «FOR word : wordsPage.content»
-                  <tr>
-                    <td>«word.id»</td>
-                    <td>«word.word»</td>
-                    <td>
-                      «Html::linkTag.content("Show").path("/words/{id}").param(word.id).build» |
-                      «Html::linkTag.content("Edit").path("/words/{id}/edit").param(word.id).build»
-                    </td>
-                  </tr>
+                    <tr>
+                      <td>«word.id»</td>
+                      <td>«word.word»</td>
+                      <td>
+                        «Html::linkTag.content("Show").path("/words/{id}").param(word.id).build» |
+                        «Html::linkTag.content("Edit").path("/words/{id}/edit").param(word.id).build»
+                      </td>
+                    </tr>
                 «ENDFOR»
                 «IF CollectionUtils.isEmpty(wordsPage.content)»
-                  <tr>
-                    <td colspan="3">
-                      No words found.
-                    </td>
-                  </tr>      
+                    <tr>
+                      <td colspan="3">
+                        No words found.
+                      </td>
+                    </tr>      
                 «ENDIF»
               </tbody>
             </table>
             
-
+            
             «Paginate::render(wordsPage, "/words", queryParams, 1, 1, false)»
-		'''
-		
-		renderLayout(view)
+        '''
+
+        renderLayout(view)
 	}
 }

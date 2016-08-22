@@ -9,14 +9,13 @@ import java.util.List
 
 class WordsEdit extends WordsView {
 
-	def String render(Word word, 
-		              List<FieldErrorDTO> fieldErrorDTOList) {
-		val view = '''
-			<h3 class="ui dividing header">Edit Word</h3>
-			
-			«Errors::render(fieldErrorDTOList)»
-			
-			«Html::formTag.clazz("ui form").action("/words/{id}").param(word.id).method("put").buildWithBlock([
+    def String render(Word word, List<FieldErrorDTO> fieldErrorDTOList) {
+        val view = '''
+            <h3 class="ui dividing header">Edit Word</h3>
+            
+            «Errors::render(fieldErrorDTOList)»
+            
+            «Html::formTag.clazz("ui form").action("/words/{id}").param(word.id).method("put").buildWithBlock([
 			   '''
                  <table class="ui sortable celled table">
                    <thead>
@@ -42,8 +41,8 @@ class WordsEdit extends WordsView {
                  <input type="submit" name="submit" value="Submit" class="ui button" />
                '''
            ])»
-		'''
-		
-		renderLayout(view)
-	}
+        '''
+
+        renderLayout(view)
+    }
 }
